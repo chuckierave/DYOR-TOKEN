@@ -672,7 +672,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
 }
 
 
-contract DYOR is Context, IERC20, Ownable {
+contract DYOR Token is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
 
@@ -726,15 +726,15 @@ contract DYOR is Context, IERC20, Ownable {
     constructor () public {
         NAME =  "DYOR Token";
         SYMBOL =  "DYOR";
-        _decimals =  18;
-        _tTotal =  100000000000000 * 10 ** 18;
+        _decimals =  9;
+        _tTotal =  100000000000000 * 10 ** 9;
         _rTotal = (MAX - (MAX % _tTotal));
         _taxFee = 5;
         _liquidityFee = 5;
         _previousTaxFee = 0;
         _previousLiquidityFee = 0;
         _maxTxAmount = 10 ** 18;
-        numTokensSellToAddToLiquidity = 10 ** 18;
+        numTokensSellToAddToLiquidity = 10 ** 9;
         _rOwned[msg.sender] = _rTotal;
         
           IUniswapV2Router02 _uniswapV2Router = IUniswapV2Router02 (0xD99D1c33F9fC3444f8101754aBC46c52416550D1);
